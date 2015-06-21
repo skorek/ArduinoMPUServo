@@ -1,6 +1,6 @@
 // -----Other Config---------
 
-#define SAFE    //Arming procedure
+//#define SAFE    //Arming procedure
 
 //---------------------------
 
@@ -126,9 +126,9 @@
 
 
 //Motor Pins
-#define MOTOR0  6
+#define MOTOR0  3
 #define MOTOR1  10
-#define MOTOR2  5
+#define MOTOR2  11
 #define MOTOR3  9
 
 

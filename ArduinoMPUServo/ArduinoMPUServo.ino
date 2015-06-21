@@ -46,25 +46,32 @@ void setup() {
   while (!Serial);
 #endif
   MPU.init();
-  //  motorInit();
+  motorInit();
   leds_init();
   //  rxInit();
-  //  motorArm();
-  //  PID_init();
+
+  motorArm();
+
+  motoTest();
+  PID_init();
   tp = millis(); //for updateSensorVal
-  tp1 = millis();
+  tp1 = millis(); //for led blinking, just cheking whether the board is still answering
 
 }
-
+int v = 160;
 void loop() {
   updateSensorVal();
   //  FlightControl();
-  if (millis() - tp1 > 1000) {
+  if (millis() - tp1 > 500) {
     tp1 = millis();
     if (val == 0) {
+      motorStart(v++);
+      if (v >= 170)
+        v = 160;
       val = 1;
     }
     else {
+      motorStop();
       val = 0;
     }
   }
