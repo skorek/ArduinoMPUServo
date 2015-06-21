@@ -29,17 +29,6 @@ int throttle = MOTOR_ZERO_LEVEL;
 byte rateAngleSwitch = 0;
 byte val = 0;
 
-
-int GYRO_XOUT_OFFSET = 0, GYRO_YOUT_OFFSET = 0, GYRO_ZOUT_OFFSET = 0;
-long GYRO_XOUT_OFFSET_1000SUM = 0, GYRO_YOUT_OFFSET_1000SUM = 0, GYRO_ZOUT_OFFSET_1000SUM = 0;
-int ACCEL_XOUT = 0, ACCEL_YOUT = 0, ACCEL_ZOUT = 0;
-float ACCEL_XANGLE = 0.0, ACCEL_YANGLE = 0.0, ACCEL_ZANGLE = 0.0;
-int GYRO_XOUT = 0, GYRO_YOUT = 0, GYRO_ZOUT = 0;
-float GYRO_XRATE = 0.0, GYRO_YRATE = 0.0, GYRO_ZRATE = 0.0;
-float GYRO_XANGLE = 0.0, GYRO_YANGLE = 0.0, GYRO_ZANGLE = 0.0;
-
-
-
 void setup() {
 #ifdef DEBUG
   Serial.begin(115200);
@@ -51,17 +40,21 @@ void setup() {
   //  rxInit();
 
   motorArm();
-
+#ifdef DEBUG
   motoTest();
+  tp1 = millis(); //for led blinking, just cheking whether the board is still answering
+#endif
   PID_init();
   tp = millis(); //for updateSensorVal
-  tp1 = millis(); //for led blinking, just cheking whether the board is still answering
+
 
 }
 int v = 160;
 void loop() {
   updateSensorVal();
   //  FlightControl();
+  
+#ifdef DEBUG
   if (millis() - tp1 > 500) {
     tp1 = millis();
     if (val == 0) {
@@ -76,8 +69,6 @@ void loop() {
     }
   }
   leds_status(val);
-
-#ifdef DEBUG
   debugProcess();
 #endif
 }
