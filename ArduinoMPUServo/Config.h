@@ -111,7 +111,7 @@
 #define RadToDeg 180.0/PI 
 #define  ACC_HPF_NR  0  //high pass filter nr
 #define  GYRO_HPF_NR 0   //high pass filter nr
-#define  GYRO_MAF_NR  2  //Moving average filter nr
+#define  GYRO_MAF_NR  3  //Moving average filter nr
 //*************************************
 
 

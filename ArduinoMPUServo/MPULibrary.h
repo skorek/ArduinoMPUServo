@@ -8,7 +8,7 @@
 #include "Arduino.h"
 #include "Wire.h"
 
-#define gyro_sensitivity 393
+#define gyro_sensitivity 131
 #define accel_sensitivity 16384
 class MPULibrary
 {

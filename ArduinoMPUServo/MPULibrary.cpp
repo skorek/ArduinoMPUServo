@@ -37,9 +37,9 @@ void MPULibrary::calibrate() {
   ACC_Y_OFFSET = a[1] / size;
   ACC_Z_OFFSET = a[2] / size;
   //
-  GYRO_X_OFFSET = a[3] / size;
-  GYRO_Y_OFFSET = a[4] / size;
-  GYRO_Z_OFFSET = a[5] / size;
+  GYRO_X_OFFSET = a[3] / size/gyro_sensitivity;
+  GYRO_Y_OFFSET = a[4] / size/gyro_sensitivity;
+  GYRO_Z_OFFSET = a[5] / size/gyro_sensitivity;
 #ifdef DEBUG
   Serial.print("Acceloffsets: ")
   Serial.print(ACC_X_OFFSET); Serial.print('\t');

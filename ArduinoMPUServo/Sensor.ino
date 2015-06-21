@@ -34,12 +34,14 @@ void updateSensorVal() {
   float accy = atan2(accy_temp,sqrt(pow((float)accz_temp,2)+pow((float)accx_temp,2)))*RadToDeg;
 
 
-//  angles[0] = SPLIT * (gy_aver * dt + angles[0]) + (1.0 - SPLIT) * accx;
-//  angles[1] = SPLIT * (gx_aver * dt + angles[1]) + (1.0 - SPLIT) * accy;
+  angles[0] = SPLIT * (gy_aver * dt + angles[0]) + (1.0 - SPLIT) * accx;
+  angles[1] = SPLIT * (gx_aver * dt + angles[1]) + (1.0 - SPLIT) * accy;
 //  angles[0] = accx;
 //  angles[1]=accy;
-angles[0] = -gy_aver * dt + angles[0];
-angles[1] = gx_aver * dt + angles[1];
+//Serial.print(accx);  Serial.print('\t');
+//Serial.print(accy);  Serial.print('\t');
+//angles[0] = -gy_aver * dt + angles[0];
+//angles[1] = gx_aver * dt + angles[1];
   tp = t;
 }
 
