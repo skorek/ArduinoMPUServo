@@ -79,12 +79,13 @@
 
 //----Debug Config---------
 #define DEBUG
-#define DEBUG_ANGLES
+//#define DEBUG_ANGLES
 //#define DEBUG_ACC
 //#define DEBUG_GYRO
 //#define DEBUG_PID
 //#define DEBUG_RX
-#define DEBUG_SERIAL_CHART
+//#define DEBUG_SERIAL_CHART
+//#define CMD
 
 //-------------------------
 

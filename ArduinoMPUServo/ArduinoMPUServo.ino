@@ -7,6 +7,14 @@
 #include <PIDCont.h>
 #include <avr/pgmspace.h>
 
+#include <CmdMessenger.h>
+
+CmdMessenger cmdMessenger = CmdMessenger(Serial);
+
+bool armed = false;
+const unsigned long sampleInterval = 100; // 0.1 second interval, 10 Hz frequency
+unsigned long previousSampleMillis = 0;
+
 PIDCont PIDroll, PIDpitch, PIDyaw, PIDangleX, PIDangleY;
 MPULibrary MPU;
 unsigned long tp;
@@ -34,25 +42,27 @@ void setup() {
   Serial.begin(115200);
   while (!Serial);
 #endif
+#ifdef CMD
+  Serial.begin(115200);
+  while (!Serial);
+#endif
   MPU.init();
   motorInit();
   leds_init();
-  //  rxInit();
-
+  rxInit(); // cmdMessenger = CmdMessenger(Serial);
   motorArm();
+  
 #ifdef DEBUG
   motoTest();
   tp1 = millis(); //for led blinking, just cheking whether the board is still answering
 #endif
   PID_init();
   tp = millis(); //for updateSensorVal
-
-
 }
 int v = 160;
 void loop() {
   updateSensorVal();
-  //  FlightControl();
+  FlightControl();
   
 #ifdef DEBUG
   if (millis() - tp1 > 500) {

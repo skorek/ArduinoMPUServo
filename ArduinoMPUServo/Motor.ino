@@ -37,11 +37,12 @@ void motoTest() {
   delay(5000);
   motorStop();
 }
+
 void motorStart(int v) {
   analogWrite(MOTOR0, v);
-    analogWrite(MOTOR1, v);
-      analogWrite(MOTOR2, v);
-        analogWrite(MOTOR3, v);
+  analogWrite(MOTOR1, v);
+  analogWrite(MOTOR2, v);
+  analogWrite(MOTOR3, v);
 }
 
 void motorStop() {
