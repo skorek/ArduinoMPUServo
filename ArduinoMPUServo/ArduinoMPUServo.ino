@@ -12,6 +12,7 @@
 CmdMessenger cmdMessenger = CmdMessenger(Serial);
 
 bool armed = false;
+bool stopped = false;
 const unsigned long sampleInterval = 100; // 0.1 second interval, 10 Hz frequency
 unsigned long previousSampleMillis = 0;
 

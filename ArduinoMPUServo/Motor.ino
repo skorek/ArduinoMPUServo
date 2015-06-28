@@ -33,12 +33,12 @@ void motoTest() {
   analogWrite(MOTOR2, MOTOR_ARM_START);
   analogWrite(MOTOR3, MOTOR_ARM_START);
   delay(5000);
-  motorStart(160);
+  motorWrite(160);
   delay(5000);
   motorStop();
 }
 
-void motorStart(int v) {
+void motorWrite(int v) {
   analogWrite(MOTOR0, v);
   analogWrite(MOTOR1, v);
   analogWrite(MOTOR2, v);

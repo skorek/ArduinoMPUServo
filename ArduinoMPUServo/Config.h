@@ -78,14 +78,14 @@
 //..........................
 
 //----Debug Config---------
-#define DEBUG
+//#define DEBUG
 //#define DEBUG_ANGLES
 //#define DEBUG_ACC
 //#define DEBUG_GYRO
 //#define DEBUG_PID
 //#define DEBUG_RX
 //#define DEBUG_SERIAL_CHART
-//#define CMD
+#define CMD
 
 //-------------------------
 
@@ -110,9 +110,9 @@
 
 #define SPLIT  0.99 //COMP-filter nr
 #define RadToDeg 180.0/PI 
-#define  ACC_HPF_NR  0  //high pass filter nr
+#define  ACC_HPF_NR  98  //high pass filter nr
 #define  GYRO_HPF_NR 0   //high pass filter nr
-#define  GYRO_MAF_NR  3  //Moving average filter nr
+#define  GYRO_MAF_NR  2  //Moving average filter nr
 //*************************************
 
 
@@ -131,7 +131,10 @@
 #define MOTOR1  10
 #define MOTOR2  11
 #define MOTOR3  9
-
+//#define MOTOR0  6 //TOP LEFT
+//#define MOTOR1  10//TOP RIGHT
+//#define MOTOR2  5 //BOTTOM LEFT
+//#define MOTOR3  9 //BOTTOM RIGHT
 
 //*************************************
 

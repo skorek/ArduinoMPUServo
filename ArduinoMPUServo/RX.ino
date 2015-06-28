@@ -10,8 +10,8 @@ enum
   kAttitudeAngle,
   kThrottle,
 };
-void rxInit(){
-     cmdMessenger.printLfCr();
+void rxInit() {
+  cmdMessenger.printLfCr();
   attachCommandCallbacks();
   cmdMessenger.feedinSerialData();
   cmdMessenger.sendCmd(kAcknowledge, "STARTED!");
@@ -52,8 +52,7 @@ void OnSetY()
 void OnArm()
 {
   armed = true;
-  motorStart(THROTTLE_WMIN);
-  delay(2000);
+  stopped = false;
   motorStop();
   cmdMessenger.sendCmd(kAcknowledge, "ARMED!");
 }
@@ -61,6 +60,7 @@ void OnArm()
 void OnStop()
 {
   throttle = MOTOR_ZERO_LEVEL;
+  stopped = true;
   cmdMessenger.sendCmd(kAcknowledge, "STOP!");
 }
 void sendThrottle() {
