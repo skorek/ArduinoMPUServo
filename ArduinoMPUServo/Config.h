@@ -150,13 +150,13 @@
 
 
 //.......RX PINS............
-#define RX_PIN_ROLL  16     //PCINT2
-#define RX_PIN_PITCH  14    //PCINT3
-#define RX_PIN_YAW  15      //PCINT1
-#define RX_PIN_THROTTLE  7  //INT6
-#define RX_PIN_AUX1  8      //PCINT4
-#define RX_PIN_AUX2  0      //INT2
-#define RX_INT_AUX2  2
-#define RX_INT_THROTTLE 4
+//#define RX_PIN_ROLL  16     //PCINT2
+//#define RX_PIN_PITCH  14    //PCINT3
+//#define RX_PIN_YAW  15      //PCINT1
+//#define RX_PIN_THROTTLE  7  //INT6
+//#define RX_PIN_AUX1  8      //PCINT4
+//#define RX_PIN_AUX2  0      //INT2
+//#define RX_INT_AUX2  2
+//#define RX_INT_THROTTLE 4
 //........................
 

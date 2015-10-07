@@ -47,7 +47,7 @@ void setup() {
   Serial.begin(115200);
   while (!Serial);
 #endif
-  MPU.init();
+//  MPU.init();
   motorInit();
   leds_init();
   rxInit(); // cmdMessenger = CmdMessenger(Serial);
@@ -62,14 +62,14 @@ void setup() {
 }
 int v = 160;
 void loop() {
-  updateSensorVal();
+//  updateSensorVal();
   FlightControl();
   
 #ifdef DEBUG
-  if (millis() - tp1 > 500) {
+  if (millis() - tp1 > 500) w{
     tp1 = millis();
     if (val == 0) {
-      motorStart(v++);
+      motorWrite(v++);
       if (v >= 170)
         v = 160;
       val = 1;
